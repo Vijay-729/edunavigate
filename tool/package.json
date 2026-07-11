@@ -1,0 +1,13 @@
+{
+  "name": "edunavigat-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "One-off admin scripts for EduNavigat (Firestore seeding, etc.)",
+  "scripts": {
+    "seed:notes": "node seed_syllabus_content.js --type notes",
+    "seed:pyqs": "node seed_syllabus_content.js --type pyqs"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.6.0"
+  }
+}

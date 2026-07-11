@@ -1,0 +1,75 @@
+name: edu_navigate_ai
+description: "EduNavigate AI — an AI-Powered Student Operating System for Class 8 through Lifelong Learning."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Navigation
+  go_router: ^14.2.7
+
+  # Firebase
+  firebase_core: ^3.15.2
+  firebase_auth: ^5.7.0
+  cloud_firestore: ^5.6.12
+  firebase_storage: ^12.3.4
+
+  # Media
+  image_picker: ^1.1.2
+
+  # Open external apply links (Scholarship Engine)
+  url_launcher: ^6.3.0
+
+  # Local profile cache — fallback when Firestore write is rolled back
+  shared_preferences: ^2.3.0
+
+  # AI (Gemini — AI Mentor & assessment insight)
+  google_generative_ai: ^0.4.6
+
+  # Location + nearby schools/institutes (OpenStreetMap: Overpass + Nominatim — no API key)
+  geolocator: ^13.0.2
+  http: ^1.2.2
+  shimmer: ^3.0.0
+  syncfusion_flutter_pdfviewer: ^33.2.15
+
+  # Downloadable PDF guides/reports (Counselling, Exam, Career, Loan modules)
+  pdf: ^3.11.1
+  path_provider: ^2.1.4
+  # Native share sheet for bookmarked content, PDFs and reports
+  share_plus: ^13.2.0
+
+  # EduVault — Secure Student Digital Locker
+  # PDF/DOC/DOCX file selection (image_picker only covers images/camera)
+  file_picker: ^12.0.0-beta.7
+  # PIN-lock + biometric (fingerprint/Face) unlock
+  local_auth: ^2.3.0
+  # Device-secure storage for the PIN hash and AES encryption key material
+  flutter_secure_storage: ^10.3.1
+  # SHA-256 hashing for duplicate-document detection
+  crypto: ^3.0.6
+  # AES-256 encryption of document bytes before upload
+  encrypt: ^5.0.3
+  # Pure-Dart image ops for the built-in scanner (rotate/B&W/brightness) and
+  # a lightweight blur heuristic
+  image: ^4.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/edunavigate_logo.png

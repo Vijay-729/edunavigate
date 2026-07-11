@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // A user may read/write only their own profile tree
+    // (/users/{uid} and all sub-collections: assessments, digitalTwin, ...).
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null
+                         && request.auth.uid == userId;
+    }
+
+    // Public reference data (Phase 4+): readable by any signed-in user,
+    // writable only from the Admin SDK / console (no client writes).
+    match /colleges/{id}      { allow read: if request.auth != null; allow write: if false; }
+    match /schools/{id}       { allow read: if request.auth != null; allow write: if false; }
+    match /coachingCenters/{id} { allow read: if request.auth != null; allow write: if false; }
+    match /exams/{id}         { allow read: if request.auth != null; allow write: if false; }
+    match /scholarships/{id}  { allow read: if request.auth != null; allow write: if false; }
+    match /jobs/{id}          { allow read: if request.auth != null; allow write: if false; }
+
+    // Notes & PYQs (syllabus_content/{board}_{classCode}_{subjectCode}/notes|pyqs/{id}):
+    // readable by any signed-in user, writable only from the Admin SDK / console.
+    match /syllabus_content/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+  }
+}

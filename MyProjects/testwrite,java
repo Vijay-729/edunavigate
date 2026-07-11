@@ -1,0 +1,24 @@
+import java.io.*;
+
+public class testwrite {
+    public static void main(String args[]) {
+
+        try {
+            FileInputStream fin = new FileInputStream("data.txt");
+
+            int count = 0;
+            int i;
+
+            while ((i = fin.read()) != -1) {
+                count++;   // count each character
+            }
+
+            fin.close();
+
+            System.out.println("Total characters = " + count);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}

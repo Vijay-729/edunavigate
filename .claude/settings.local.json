@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/vijaykumar/Library/Android/sdk/platform-tools/adb -s emulator-5554 shell input tap 280 570)",
+      "Bash(/Users/vijaykumar/Library/Android/sdk/platform-tools/adb -s emulator-5554 exec-out screencap -p)"
+    ]
+  }
+}

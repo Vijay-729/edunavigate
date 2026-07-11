@@ -1,0 +1,36 @@
+# Secrets — never commit
+.env
+env.json
+lib/firebase_options.dart
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
+# Flutter
+build/
+build 2/
+.dart_tool/
+.pub/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android
+android/.gradle/
+android/build/
+
+# iOS
+ios/Pods/
+ios/build/
+ios/.symlinks/
+
+# macOS
+macos/Pods/
+macos/build/
+
+# IDE
+.idea/
+.vscode/
+
+# Generated binaries
+*.apk
+*.aab
+*.ipa
